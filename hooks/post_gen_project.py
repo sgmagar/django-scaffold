@@ -1,4 +1,5 @@
 import os
+import shutil
 import sys
 
 REMOVE_PATHS = [
@@ -10,6 +11,6 @@ for path in REMOVE_PATHS:
     if not path or not os.path.exists(path):
         continue
     if os.path.isdir(path):
-        os.rmdir(path)
+        shutil.rmtree(path)
     else:
         os.unlink(path)
